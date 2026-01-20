@@ -1,0 +1,161 @@
+/* ===================== GLOBAL ===================== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f7fb;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background: linear-gradient(to right, #b3d9ff, #e6f2ff);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* ===================== BUTTONS ===================== */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #005fa3;
+}
+
+/* ===================== SECTIONS ===================== */
+section {
+    padding: 20px 15px;
+    max-width: 950px;
+    margin: 20px auto;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+h2 {
+    color: #0077cc;
+    margin-bottom: 15px;
+}
+
+/* ===================== SKILLS ===================== */
+.skills span {
+    display: inline-block;
+    background: #d9ecff;
+    padding: 8px 14px;
+    margin: 6px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* ===================== CARDS ===================== */
+.card, .section-card {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .section-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+/* ===================== CERTIFICATES ===================== */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px; /* Increased gap between certificates */
+    margin-top: 15px;
+}
+
+.cert-grid a {
+    display: block;
+    padding: 20px;          /* More padding for space inside each cert */
+    background: #e6f2ff;
+    border-radius: 12px;
+    font-size: 15px;
+    color: #0077cc;
+    text-align: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cert-grid a:hover {
+    background: #cce6ff;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+
+/* ===================== FOOTER ===================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #e6f2ff;
+    margin-top: 40px;
+}
+
+.linkedin {
+    background: #0a66c2;
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================== PRINT-FRIENDLY STYLES ===================== */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    header, footer {
+        background: none !important;
+        color: black !important;
+    }
+
+    .btn, button {
+        display: none; /* Hide buttons in PDF */
+    }
+
+    .card, .section-card {
+        box-shadow: none; /* Remove shadows for PDF */
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr; /* Stack certificates vertically */
+    }
+
+    a {
+        color: #0077cc; /* Keep links visible */
+        text-decoration: underline;
+    }
+}
